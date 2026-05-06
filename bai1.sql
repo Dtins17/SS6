@@ -1,9 +1,9 @@
 -- revenue là bí danh (alias) của SUM(total_amount)
 -- Nhưng:
 -- WHERE chạy TRƯỚC SELECT
--- 👉 Lúc này chưa tồn tại revenue
+--  Lúc này chưa tồn tại revenue
 
--- ⛔ Vì vậy:
+--  Vì vậy:
 
 -- WHERE revenue > 0
 
