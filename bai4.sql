@@ -1,5 +1,5 @@
 -- 1. Luồng tư duy
--- ❌ Hướng 1: Lọc trễ (Bad Practice)
+--  Hướng 1: Lọc trễ (Bad Practice)
 SELECT 
     hotel_id
 FROM bookings
@@ -17,7 +17,7 @@ HAVING
 -- Gom nhóm tất cả
 -- Sau đó mới lọc
 
--- 👉 Tức là:
+-- Tức là:
 
 -- RAM: phải giữ nhiều dữ liệu hơn
 -- CPU: phải tính toán trên dữ liệu “rác”
@@ -38,11 +38,11 @@ HAVING
 --     Execution Flow
 -- Cách 2:
 -- WHERE status = 'COMPLETED'
--- 👉 loại bỏ 70–90% dữ liệu ngay từ đầu
+--  loại bỏ 70–90% dữ liệu ngay từ đầu
 -- GROUP BY
--- 👉 chỉ xử lý dữ liệu cần thiết
+--  chỉ xử lý dữ liệu cần thiết
 -- HAVING
--- 👉 lọc điều kiện cuối cùng
+--  lọc điều kiện cuối cùng
 
 -- So sánh hiệu năng
 -- | Tiêu chí      | Cách 1 (Bad) | Cách 2 (Good)   |
