@@ -8,16 +8,16 @@
 --     MIN(price) AS min_price
 -- FROM rooms
 -- GROUP BY hotel_id;
--- ❌ Vấn đề cốt lõi
+-- Vấn đề cốt lõi
 
 -- Bạn đang nói với database:
 
 -- “Hãy gom tất cả phòng theo hotel_id, rồi trả về 1 dòng / khách sạn”
 
--- 👉 Nhưng lại yêu cầu thêm:
+-- Nhưng lại yêu cầu thêm:
 
 -- room_name
--- 🔥 Mâu thuẫn logic
+-- Mâu thuẫn logic
 
 -- Một khách sạn có nhiều phòng:
 
@@ -26,24 +26,24 @@
 -- 1	Standard	800k
 -- 1	VIP	2tr
 
--- 👉 Sau GROUP BY hotel_id:
+-- Sau GROUP BY hotel_id:
 
 -- Chỉ còn 1 dòng cho hotel_id = 1
 -- MIN(price) = 800k
 
--- ❗ Nhưng:
+-- Nhưng:
 
 -- room_name là gì?
 -- Deluxe?
 -- Standard?
 -- VIP?
 
--- ⛔ Không có câu trả lời duy nhất → vi phạm toán học
+-- Không có câu trả lời duy nhất → vi phạm toán học
 
--- 💣 Vì sao MySQL 8 báo lỗi?
--- Trước đây MySQL “dễ dãi” → chọn random 😅
+--  Vì sao MySQL 8 báo lỗi?
+-- Trước đây MySQL “dễ dãi” → chọn random 
 -- MySQL 8 Strict Mode:
--- 👉 Cấm luôn để tránh bug dữ liệu
+-- Cấm luôn để tránh bug dữ liệu
 
 -- 2. Câu truy vấn đúng
 
