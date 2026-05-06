@@ -17,13 +17,13 @@
 -- room_id != 101
 -- AND room_id != 102
 -- AND room_id != NULL
--- ❌ Vấn đề nằm ở đây:
+-- Vấn đề nằm ở đây:
 -- room_id != NULL  → UNKNOWN
 
 -- Trong SQL:
 
 -- So sánh với NULL → không TRUE, không FALSE → UNKNOWN
--- 👉 Toàn bộ biểu thức:
+-- Toàn bộ biểu thức:
 -- TRUE AND TRUE AND UNKNOWN = UNKNOWN
 
 -- Trong WHERE:
@@ -31,7 +31,7 @@
 -- Chỉ nhận TRUE
 -- UNKNOWN bị loại
 
--- ⛔ ⇒ Kết quả: lọc hết → trả về 0 dòng
+-- -> Kết quả: lọc hết → trả về 0 dòng
 
 -- 2. Cách khắc phục an toàn
 -- Cách 1: Lọc NULL trong subquery
