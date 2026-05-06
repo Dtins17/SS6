@@ -1,21 +1,21 @@
 -- 1. Ý tưởng logic (I/O & Luồng)
--- 🎯 Mục tiêu
+-- Mục tiêu
 
 -- Với mỗi user_id, bạn cần tính 2 chỉ số cùng lúc:
 
 -- Tổng số đơn → đếm tất cả
 -- Số đơn bị hủy → chỉ đếm status = 'CANCELLED'
--- 🔥 Vấn đề mấu chốt
+--  Vấn đề mấu chốt
 
--- 👉 COUNT(*) thì đếm được tất cả
--- 👉 Nhưng làm sao đếm riêng đơn bị hủy trong cùng GROUP?
+--  COUNT(*) thì đếm được tất cả
+--  Nhưng làm sao đếm riêng đơn bị hủy trong cùng GROUP?
 
--- 💡 Giải pháp chuẩn
+--  Giải pháp chuẩn
 
 -- Dùng:
 
 -- SUM(CASE WHEN ... THEN 1 ELSE 0 END)
--- 🧩 Cách hoạt động
+--  Cách hoạt động
 
 -- Ví dụ dữ liệu:
 
@@ -23,7 +23,7 @@
 -- 1	SUCCESS
 -- 1	CANCELLED
 -- 1	CANCELLED
--- 👉 Khi chạy:
+--  Khi chạy:
 -- SUM(CASE WHEN status = 'CANCELLED' THEN 1 ELSE 0 END)
 
 -- → sẽ biến thành:
@@ -33,7 +33,7 @@
 -- CANCELLED	1
 -- CANCELLED	1
 
--- 👉 SUM = 2 ✅
+--  SUM = 2 
 
 -- 2. Câu SQL hoàn chỉnh
 
